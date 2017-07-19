@@ -1,0 +1,280 @@
+********************Latency comparison, full model ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Group + Condition + Group:Condition + (1 | TB) + (1 | Subject)
+   Data: Data
+
+     AIC      BIC   logLik deviance df.resid 
+ 60842.6  60889.3 -30414.3  60828.6     5817 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4606 -0.6273 -0.0619  0.5389  8.1312 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ TB       (Intercept)   16.43   4.054  
+ Subject  (Intercept)  633.87  25.177  
+ Residual             1965.51  44.334  
+Number of obs: 5824, groups:  TB, 40; Subject, 24
+
+Fixed effects:
+                Estimate Std. Error t value
+(Intercept)      296.786      7.389   40.17
+Group             39.986     10.406    3.84
+Condition         37.681      1.648   22.87
+Group:Condition  -23.982      2.325  -10.31
+
+Correlation of Fixed Effects:
+            (Intr) Group  Condtn
+Group       -0.704              
+Condition   -0.108  0.077       
+Group:Cndtn  0.077 -0.109 -0.708
+
+
+>>>Interaction ANOVA: 
+
+Data: Data
+Models:
+lat.nInt: Lat ~ Group + Condition + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Group + Condition + Group:Condition + (1 | TB) + (1 | Subject)
+          Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nInt   6 60946 60986 -30467    60934                             
+lat.model  7 60843 60889 -30414    60829 105.42      1  < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+----------
+
+>>>Group effect ANOVA: 
+
+Data: Data
+Models:
+lat.nGroup: Lat ~ Condition + Group:Condition + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Group + Condition + Group:Condition + (1 | TB) + (1 | Subject)
+           Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nGroup  6 60852 60892 -30420    60840                             
+lat.model   7 60843 60889 -30414    60829 11.549      1  0.0006778 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+>>>Condition effect ANOVA: 
+
+Data: Data
+Models:
+lat.nCond: Lat ~ Group + Group:Condition + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Group + Condition + Group:Condition + (1 | TB) + (1 | Subject)
+          Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nCond  6 61341 61381 -30665    61329                             
+lat.model  7 60843 60889 -30414    60829 500.61      1  < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Latency comparison, NTF ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Condition + (1 | TB) + (1 | Subject)
+   Data: DataNTF
+
+     AIC      BIC   logLik deviance df.resid 
+ 30696.6  30726.5 -15343.3  30686.6     2918 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4352 -0.6423 -0.0629  0.5319  7.4600 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ TB       (Intercept)    5.219  2.285  
+ Subject  (Intercept)  745.917 27.311  
+ Residual             2079.469 45.601  
+Number of obs: 2923, groups:  TB, 40; Subject, 12
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  336.685      7.982   42.18
+Condition     13.683      1.688    8.11
+
+Correlation of Fixed Effects:
+          (Intr)
+Condition -0.103
+
+>>>Condition effect ANOVA: 
+
+Data: DataNTF
+Models:
+lat.nCond: Lat ~ 1 + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Condition + (1 | TB) + (1 | Subject)
+          Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nCond  4 30760 30784 -15376    30752                             
+lat.model  5 30697 30727 -15343    30687 64.991      1  7.523e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Latency comparison, TF ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Condition + (1 | TB) + (1 | Subject)
+   Data: DataTF
+
+     AIC      BIC   logLik deviance df.resid 
+ 30153.6  30183.4 -15071.8  30143.6     2896 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3164 -0.6224 -0.0582  0.5448  8.3215 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ TB       (Intercept)   17.16   4.142  
+ Subject  (Intercept)  522.66  22.862  
+ Residual             1860.84  43.137  
+Number of obs: 2901, groups:  TB, 40; Subject, 12
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  296.875      6.730   44.11
+Condition     37.656      1.604   23.48
+
+Correlation of Fixed Effects:
+          (Intr)
+Condition -0.115
+
+>>>Condition effect ANOVA: 
+
+Data: DataTF
+Models:
+lat.nCond: Lat ~ 1 + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Condition + (1 | TB) + (1 | Subject)
+          Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nCond  4 30656 30680 -15324    30648                             
+lat.model  5 30154 30183 -15072    30144 504.46      1  < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Latency comparison, NT blocks ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Group + (1 | TB) + (1 | Subject)
+   Data: DataNT
+
+     AIC      BIC   logLik deviance df.resid 
+ 29875.7  29905.5 -14932.9  29865.7     2838 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3862 -0.6336 -0.0747  0.5094  7.5852 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ TB       (Intercept)   41.81   6.466  
+ Subject  (Intercept)  808.22  28.429  
+ Residual             2044.40  45.215  
+Number of obs: 2843, groups:  TB, 40; Subject, 24
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  334.509      8.365   39.99
+Group         15.802     11.730    1.35
+
+Correlation of Fixed Effects:
+      (Intr)
+Group -0.701
+
+>>>Group effect ANOVA: 
+
+Data: DataNT
+Models:
+lat.nGroup: Lat ~ 1 + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Group + (1 | TB) + (1 | Subject)
+           Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)
+lat.nGroup  4 29876 29899 -14934    29868                         
+lat.model   5 29876 29906 -14933    29866 1.7494      1     0.1859
+
+
+
+********************Latency comparison, T blocks ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Group + (1 | TB) + (1 | Subject)
+   Data: DataT
+
+     AIC      BIC   logLik deviance df.resid 
+ 30643.6  30673.6 -15316.8  30633.6     2976 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.5389 -0.6261 -0.0762  0.5681  8.1323 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ TB       (Intercept)   11.19   3.346  
+ Subject  (Intercept)  700.81  26.473  
+ Residual             1637.77  40.469  
+Number of obs: 2981, groups:  TB, 40; Subject, 24
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  296.660      7.735   38.35
+Group         40.150     10.909    3.68
+
+Correlation of Fixed Effects:
+      (Intr)
+Group -0.705
+
+>>>Group effect ANOVA: 
+
+Data: DataT
+Models:
+lat.nGroup: Lat ~ 1 + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Group + (1 | TB) + (1 | Subject)
+           Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)   
+lat.nGroup  4 30652 30676 -15322    30644                            
+lat.model   5 30644 30674 -15317    30634 10.741      1   0.001048 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Latency comparison, Block 2 NT vs T ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Condition + (1 | TB) + (1 | Subject)
+   Data: DataB2
+
+     AIC      BIC   logLik deviance df.resid 
+ 30274.5  30304.3 -15132.2  30264.5     2897 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.1824 -0.6299 -0.0896  0.5044  7.9556 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ TB       (Intercept)    9.017  3.003  
+ Subject  (Intercept)  740.935 27.220  
+ Residual             1910.560 43.710  
+Number of obs: 2902, groups:  TB, 40; Subject, 24
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  336.814      7.956   42.34
+Condition     -2.110     11.231   -0.19
+
+Correlation of Fixed Effects:
+          (Intr)
+Condition -0.705
+
+>>>Group effect ANOVA: 
+
+Data: DataB2
+Models:
+lat.nCond: Lat ~ 1 + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Condition + (1 | TB) + (1 | Subject)
+          Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)
+lat.nCond  4 30273 30296 -15132    30265                         
+lat.model  5 30275 30304 -15132    30265 0.0353      1      0.851
+
+
+

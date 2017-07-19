@@ -1,0 +1,478 @@
+********************Latency comparison, full model ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Block + Group + Block:Group + (1 | Subj)
+   Data: Data
+
+     AIC      BIC   logLik deviance df.resid 
+ 20789.7  20823.3 -10388.9  20777.7     1984 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.2051 -0.5612 -0.1044  0.4032 13.3369 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 2172     46.60   
+ Residual             1911     43.72   
+Number of obs: 1990, groups:  Subj, 20
+
+Fixed effects:
+             Estimate Std. Error t value
+(Intercept)   295.380     14.865  19.870
+Block2        -22.005      2.781  -7.914
+Group          -4.616     21.023  -0.220
+Block2:Group   34.875      3.921   8.894
+
+Correlation of Fixed Effects:
+            (Intr) Block2 Group 
+Block2      -0.092              
+Group       -0.707  0.065       
+Block2:Grop  0.066 -0.709 -0.093
+
+
+>>>Interaction ANOVA: 
+
+Data: Data
+Models:
+lat.nInt: Lat ~ Block + Group + (1 | Subj)
+lat.model: Lat ~ Block + Group + Block:Group + (1 | Subj)
+          Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nInt   5 20865 20893 -10428    20855                             
+lat.model  6 20790 20823 -10389    20778 77.551      1  < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+----------
+
+>>>Group effect ANOVA: 
+
+Data: Data
+Models:
+lat.nGroup: Lat ~ Block + Block:Group + (1 | Subj)
+lat.model: Lat ~ Block + Group + Block:Group + (1 | Subj)
+           Df   AIC   BIC logLik deviance Chisq Chi Df Pr(>Chisq)
+lat.nGroup  6 20790 20823 -10389    20778                        
+lat.model   6 20790 20823 -10389    20778     0      0          1
+
+
+>>>Block effect ANOVA: 
+
+Data: Data
+Models:
+lat.nBlock: Lat ~ Group + Block:Group + (1 | Subj)
+lat.model: Lat ~ Block + Group + Block:Group + (1 | Subj)
+           Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nBlock  5 20849 20877 -10420    20839                             
+lat.model   6 20790 20823 -10389    20778 61.656      1  4.089e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Latency comparison, Effect of Group in Pre/Pst ********************
+
+	 Simultaneous Tests for General Linear Hypotheses
+
+Fit: lmer(formula = Lat ~ Block + Group + Block:Group + (1 | Subj), 
+    data = Data, REML = FALSE)
+
+Linear Hypotheses:
+          Estimate Std. Error z value Pr(>|z|)  
+Pre == 0    -4.616     21.023  -0.220   0.8262  
+Post == 0  -52.264     21.392  -2.443   0.0291 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+(Adjusted p values reported -- holm method)
+
+
+
+
+********************Peak Velocity comparison, full model ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Vpeak ~ Block + Group + Block:Group + (1 | Subj)
+   Data: Data
+
+     AIC      BIC   logLik deviance df.resid 
+ -4254.1  -4220.6   2133.1  -4266.1     1984 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.6613 -0.6322 -0.0594  0.5662  5.6207 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 0.001073 0.03275 
+ Residual             0.006670 0.08167 
+Number of obs: 1990, groups:  Subj, 20
+
+Fixed effects:
+              Estimate Std. Error t value
+(Intercept)   0.657788   0.010983   59.89
+Block2        0.014956   0.005194    2.88
+Group        -0.113218   0.015532   -7.29
+Block2:Group  0.014808   0.007325    2.02
+
+Correlation of Fixed Effects:
+            (Intr) Block2 Group 
+Block2      -0.234              
+Group       -0.707  0.165       
+Block2:Grop  0.166 -0.709 -0.234
+
+
+>>>Interaction ANOVA: 
+
+Data: Data
+Models:
+vel.nInt: Vpeak ~ Block + Group + (1 | Subj)
+vel.model: Vpeak ~ Block + Group + Block:Group + (1 | Subj)
+          Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(>Chisq)  
+vel.nInt   5 -4252.0 -4224.1 2131.0  -4262.0                           
+vel.model  6 -4254.1 -4220.6 2133.1  -4266.1 4.0824      1    0.04333 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+----------
+
+>>>Group effect ANOVA: 
+
+Data: Data
+Models:
+vel.nGroup: Vpeak ~ Block + Block:Group + (1 | Subj)
+vel.model: Vpeak ~ Block + Group + Block:Group + (1 | Subj)
+           Df     AIC     BIC logLik deviance Chisq Chi Df Pr(>Chisq)
+vel.nGroup  6 -4254.1 -4220.6 2133.1  -4266.1                        
+vel.model   6 -4254.1 -4220.6 2133.1  -4266.1     0      0          1
+
+
+>>>Block effect ANOVA: 
+
+Data: Data
+Models:
+vel.nBlock: Vpeak ~ Group + Block:Group + (1 | Subj)
+vel.model: Vpeak ~ Block + Group + Block:Group + (1 | Subj)
+           Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(>Chisq)   
+vel.nBlock  5 -4247.9 -4219.9 2128.9  -4257.9                            
+vel.model   6 -4254.1 -4220.6 2133.1  -4266.1 8.2736      1   0.004023 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Peak Velocity comparison, Effect of Group in Pre/Pst ********************
+
+	 Simultaneous Tests for General Linear Hypotheses
+
+Fit: lmer(formula = Vpeak ~ Block + Group + Block:Group + (1 | Subj), 
+    data = Data, REML = FALSE)
+
+Linear Hypotheses:
+          Estimate Std. Error z value Pr(>|z|)    
+Pre == 0  -0.11322    0.01553  -7.289 6.24e-13 ***
+Post == 0  0.11337    0.01720   6.591 4.36e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+(Adjusted p values reported -- holm method)
+
+
+
+
+********************Latency comparison, Outward ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Block + Vpeak + Err + (1 | Subj)
+   Data: DataOut
+
+     AIC      BIC   logLik deviance df.resid 
+ 10387.1  10416.4  -5187.5  10375.1      984 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.9531 -0.5615 -0.0890  0.4117 12.9763 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 1603     40.04   
+ Residual             1994     44.65   
+Number of obs: 990, groups:  Subj, 10
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 276.9713    16.4509  16.836
+Block2      -22.4579     2.8573  -7.860
+Vpeak        27.4431    15.5822   1.761
+Err           0.3071     1.6603   0.185
+
+Correlation of Fixed Effects:
+       (Intr) Block2 Vpeak 
+Block2 -0.028              
+Vpeak  -0.616 -0.077       
+Err    -0.079 -0.076 -0.062
+
+
+>>>Peak Vel ANOVA: 
+
+Data: DataOut
+Models:
+lat.nVpeak: Lat ~ Block + Err + (1 | Subj)
+lat.model: Lat ~ Block + Vpeak + Err + (1 | Subj)
+           Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)  
+lat.nVpeak  5 10388 10413 -5189.1    10378                           
+lat.model   6 10387 10416 -5187.5    10375 3.0939      1    0.07859 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+>>>Endpt Err ANOVA: 
+
+Data: DataOut
+Models:
+lat.nErr: Lat ~ Block + Vpeak + (1 | Subj)
+lat.model: Lat ~ Block + Vpeak + Err + (1 | Subj)
+          Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+lat.nErr   5 10385 10410 -5187.5    10375                         
+lat.model  6 10387 10416 -5187.5    10375 0.0342      1     0.8533
+
+
+>>>Block ANOVA: 
+
+Data: DataOut
+Models:
+lat.null: Lat ~ 1 + (1 | Subj)
+lat.nVpeaknErr: Lat ~ Block + (1 | Subj)
+               Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.null        3 10442 10457 -5218.2    10436                             
+lat.nVpeaknErr  4 10386 10406 -5189.1    10378 58.081      1  2.516e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Peak Vel comparison, Outward ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Vpeak ~ Block + (1 | Subj)
+   Data: DataOut
+
+     AIC      BIC   logLik deviance df.resid 
+ -1894.6  -1875.0    951.3  -1902.6      986 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.1387 -0.6377 -0.1111  0.5821  5.0476 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ Subj     (Intercept) 0.0004995 0.02235 
+ Residual             0.0084031 0.09167 
+Number of obs: 990, groups:  Subj, 10
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  0.65779    0.00817   80.51
+Block2       0.01493    0.00583    2.56
+
+Correlation of Fixed Effects:
+       (Intr)
+Block2 -0.353
+
+>>>Vel effect ANOVA: 
+
+Data: DataOut
+Models:
+vel.null: Vpeak ~ 1 + (1 | Subj)
+vel.model: Vpeak ~ Block + (1 | Subj)
+          Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(>Chisq)  
+vel.null   3 -1890.0 -1875.3 948.02  -1896.0                           
+vel.model  4 -1894.6 -1875.0 951.29  -1902.6 6.5367      1    0.01057 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Endpt Err comparison, Outward ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Err ~ Block + (1 | Subj)
+   Data: DataOut
+
+     AIC      BIC   logLik deviance df.resid 
+  2549.2   2568.8  -1270.6   2541.2      986 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.2600 -0.6193 -0.1584  0.4295 14.6163 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 0.1700   0.4123  
+ Residual             0.7386   0.8594  
+Number of obs: 990, groups:  Subj, 10
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  1.16220    0.13594   8.550
+Block2       0.13800    0.05466   2.525
+
+Correlation of Fixed Effects:
+       (Intr)
+Block2 -0.199
+
+>>>Err effect ANOVA: 
+
+Data: DataOut
+Models:
+err.null: Err ~ 1 + (1 | Subj)
+err.model: Err ~ Block + (1 | Subj)
+          Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)  
+err.null   3 2553.6 2568.3 -1273.8   2547.6                           
+err.model  4 2549.2 2568.8 -1270.6   2541.2 6.3526      1    0.01172 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Latency comparison, Inward ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Lat ~ Block + Vpeak + Err + (1 | Subj)
+   Data: DataIn
+
+     AIC      BIC   logLik deviance df.resid 
+ 10405.6  10435.1  -5196.8  10393.6      994 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.2823 -0.5218 -0.1261  0.3633 10.2492 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 2686     51.82   
+ Residual             1818     42.64   
+Number of obs: 1000, groups:  Subj, 10
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  301.024     19.556  15.393
+Block2        13.704      2.762   4.962
+Vpeak        -24.452     19.441  -1.258
+Err            2.813      2.107   1.335
+
+Correlation of Fixed Effects:
+       (Intr) Block2 Vpeak 
+Block2  0.041              
+Vpeak  -0.524 -0.214       
+Err    -0.038  0.059 -0.146
+
+
+>>>Peak Vel ANOVA: 
+
+Data: DataIn
+Models:
+lat.nVpeak: Lat ~ Block + Err + (1 | Subj)
+lat.model: Lat ~ Block + Vpeak + Err + (1 | Subj)
+           Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+lat.nVpeak  5 10405 10430 -5197.6    10395                         
+lat.model   6 10406 10435 -5196.8    10394 1.5767      1     0.2092
+
+
+>>>Endpt Err ANOVA: 
+
+Data: DataIn
+Models:
+lat.nErr: Lat ~ Block + Vpeak + (1 | Subj)
+lat.model: Lat ~ Block + Vpeak + Err + (1 | Subj)
+          Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+lat.nErr   5 10405 10430 -5197.7    10395                         
+lat.model  6 10406 10435 -5196.8    10394 1.7799      1     0.1822
+
+
+>>>Block ANOVA: 
+
+Data: DataIn
+Models:
+lat.null: Lat ~ 1 + (1 | Subj)
+lat.nVpeaknErr: Lat ~ Block + (1 | Subj)
+               Df   AIC   BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.null        3 10425 10440 -5209.5    10419                             
+lat.nVpeaknErr  4 10404 10424 -5198.3    10396 22.456      1   2.15e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Peak Vel comparison, Inward ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Vpeak ~ Block + (1 | Subj)
+   Data: DataIn
+
+     AIC      BIC   logLik deviance df.resid 
+ -2426.3  -2406.6   1217.1  -2434.3      996 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.1809 -0.6476 -0.0094  0.5813  4.6596 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 0.001646 0.04057 
+ Residual             0.004954 0.07039 
+Number of obs: 1000, groups:  Subj, 10
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 0.544570   0.013210   41.22
+Block2      0.029764   0.004452    6.69
+
+Correlation of Fixed Effects:
+       (Intr)
+Block2 -0.168
+
+>>>Vel effect ANOVA: 
+
+Data: DataIn
+Models:
+vel.null: Vpeak ~ 1 + (1 | Subj)
+vel.model: Vpeak ~ Block + (1 | Subj)
+          Df     AIC     BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+vel.null   3 -2384.6 -2369.8 1195.3  -2390.6                             
+vel.model  4 -2426.3 -2406.7 1217.1  -2434.3 43.723      1  3.783e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+********************Endpt Err comparison, Inward ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Err ~ Block + (1 | Subj)
+   Data: DataIn
+
+     AIC      BIC   logLik deviance df.resid 
+  1997.0   2016.7   -994.5   1989.0      996 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.6550 -0.7248 -0.1618  0.4879  5.0397 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subj     (Intercept) 0.01057  0.1028  
+ Residual             0.42258  0.6501  
+Number of obs: 1000, groups:  Subj, 10
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  1.08653    0.04361  24.913
+Block2      -0.03774    0.04111  -0.918
+
+Correlation of Fixed Effects:
+       (Intr)
+Block2 -0.471
+
+>>>Err effect ANOVA: 
+
+Data: DataIn
+Models:
+err.null: Err ~ 1 + (1 | Subj)
+err.model: Err ~ Block + (1 | Subj)
+          Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+err.null   3 1995.9 2010.6 -994.94   1989.9                         
+err.model  4 1997.0 2016.7 -994.52   1989.0 0.8422      1     0.3588
+
+
+

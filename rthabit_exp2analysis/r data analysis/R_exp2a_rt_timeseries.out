@@ -1,0 +1,35 @@
+********************Latency time series, T blocks ********************
+Generalized least squares fit by REML
+  Model: Lat ~ Group * Trial 
+  Data: DataT 
+       AIC      BIC    logLik
+  30964.35 31000.35 -15476.18
+
+Correlation Structure: AR(1)
+ Formula: ~1 | Subject 
+ Parameter estimate(s):
+    Phi 
+0.43336 
+
+Coefficients:
+                Value Std.Error  t-value p-value
+(Intercept) 305.47678  3.924007 77.84818  0.0000
+Group        47.67813  5.570978  8.55831  0.0000
+Trial        -0.13285  0.052740 -2.51896  0.0118
+Group:Trial  -0.10923  0.074602 -1.46424  0.1432
+
+ Correlation: 
+            (Intr) Group  Trial 
+Group       -0.704              
+Trial       -0.864  0.609       
+Group:Trial  0.611 -0.865 -0.707
+
+Standardized residuals:
+        Min          Q1         Med          Q3         Max 
+-2.91431374 -0.66466477 -0.04690616  0.57237450  7.09112452 
+
+Residual standard error: 48.2416 
+Degrees of freedom: 2981 total; 2977 residual
+
+
+

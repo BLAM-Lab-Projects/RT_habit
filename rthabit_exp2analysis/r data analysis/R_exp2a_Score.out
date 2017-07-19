@@ -1,0 +1,67 @@
+********************Score comparison, full model ********************
+Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: Score ~ Group + Condition + Group:Condition + (1 | Subject)
+   Data: Data
+
+     AIC      BIC   logLik deviance df.resid 
+   351.9    363.1   -169.9    339.9       42 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.04780 -0.34375  0.07046  0.50795  1.61104 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subject  (Intercept) 52.56    7.250   
+ Residual             34.66    5.888   
+Number of obs: 48, groups:  Subject, 24
+
+Fixed effects:
+                   Estimate Std. Error t value
+(Intercept)         104.917      2.696   38.91
+GroupTF               7.750      3.813    2.03
+ConditionT            4.917      2.404    2.05
+GroupTF:ConditionT   -4.417      3.399   -1.30
+
+Correlation of Fixed Effects:
+            (Intr) GropTF CndtnT
+GroupTF     -0.707              
+ConditionT  -0.446  0.315       
+GrpTF:CndtT  0.315 -0.446 -0.707
+
+
+>>>Interaction ANOVA: 
+
+Data: Data
+Models:
+score.nInt: Score ~ Group + Condition + (1 | Subject)
+score.model: Score ~ Group + Condition + Group:Condition + (1 | Subject)
+            Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+score.nInt   5 351.51 360.87 -170.75   341.51                         
+score.model  6 351.88 363.11 -169.94   339.88 1.6315      1     0.2015
+
+----------
+
+>>>Group effect ANOVA (no interaction): 
+
+Data: Data
+Models:
+score.nIntnGroup: Score ~ Condition + (1 | Subject)
+score.nInt: Score ~ Group + Condition + (1 | Subject)
+                 Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+score.nIntnGroup  4 352.01 359.50 -172.01   344.01                         
+score.nInt        5 351.51 360.87 -170.75   341.51 2.5013      1     0.1138
+
+
+>>>Condition effect ANOVA (no interaction): 
+
+Data: Data
+Models:
+score.nIntnCond: Score ~ Group + (1 | Subject)
+score.nInt: Score ~ Group + Condition + (1 | Subject)
+                Df    AIC    BIC  logLik deviance  Chisq Chi Df Pr(>Chisq)
+score.nIntnCond  4 351.77 359.26 -171.89   343.77                         
+score.nInt       5 351.51 360.87 -170.75   341.51 2.2623      1     0.1326
+
+
+

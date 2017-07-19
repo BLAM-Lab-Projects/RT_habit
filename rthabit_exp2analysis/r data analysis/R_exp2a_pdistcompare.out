@@ -1,0 +1,330 @@
+-------------------  Full Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Group + Cond + Group:Cond + (1 | Subj) + (1 | TB) 
+   Data: dat (Number of observations: 5824) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.19      0.05     0.12      0.3       4940    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.29      0.04     0.23     0.37       3036    1
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept       -3.63      0.07    -3.78    -3.49       2456    1
+Group1           0.04      0.03    -0.02     0.10      12230    1
+Cond1            0.13      0.03     0.08     0.19      11404    1
+Group1:Cond1     0.05      0.04    -0.03     0.13      10619    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma      0.8      0.01     0.78     0.81      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Interaction
+
+Hypothesis Tests for class b:
+                 Estimate Est.Error l-95% CI u-95% CI Evid.Ratio 
+Group1:Cond1 = 0     0.05      0.04    -0.03     0.13      11.59 
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+                           LOOIC     SE
+mod.full               -27505.51 157.56
+mod.full.nI            -27505.99 157.61
+mod.full - mod.full.nI      0.48   2.44
+
+
+--
+
+     Group Cond PDist  Subj    TB MargCond   Estimate   Est.Error    lowerCI    upperCI
+2924     0    0    NA .ZERO .ZERO        1 0.03624623 0.002582275 0.03137256 0.04205009
+3051     0    1    NA .ZERO .ZERO        1 0.04148745 0.002928633 0.03590154 0.04811194
+124      1    0    NA .ZERO .ZERO        1 0.03772162 0.002694028 0.03269222 0.04370742
+1        1    1    NA .ZERO .ZERO        1 0.04538723 0.003251314 0.03928529 0.05262513
+
+
+~~~
+
+Main effect of Group (NTF/TF):
+
+Hypothesis Tests for class b:
+                         Estimate Est.Error l-95% CI u-95% CI Evid.Ratio 
+(Intercept+(Inter... = 0    -0.04      0.03     -0.1     0.02      14.24 
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+                           LOOIC     SE
+mod.full               -27505.51 157.56
+mod.full.nG            -27505.23 157.59
+mod.full - mod.full.nG     -0.28   0.13
+
+
+~~~
+
+Main effect of Condition (Trace/NoTrace)
+
+Hypothesis Tests for class b:
+                         Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Intercept+(Inter... = 0    -0.13      0.03    -0.19    -0.08          0 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+                           LOOIC     SE
+mod.full               -27505.51 157.56
+mod.full.nC            -27505.62 157.59
+mod.full - mod.full.nC      0.12   0.12
+
+
+-------------------  NTF Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Cond + (1 | Subj) + (1 | TB) 
+   Data: ntfdata (Number of observations: 2923) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.26      0.07     0.16     0.42       4526    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.33      0.04     0.26     0.43       3258    1
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept    -3.60      0.09    -3.78    -3.41       2816    1
+Cond1         0.19      0.03     0.13     0.24      20000    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma      0.8      0.01     0.78     0.82      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Condition:
+
+Hypothesis Tests for class b:
+                         Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Cond1+Intercept)... = 0     0.19      0.03     0.13     0.24          0 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+Main effect of Condition (Trace/NoTrace)
+
+    Cond PDist  Subj    TB MargCond   Estimate   Est.Error    lowerCI    upperCI
+124    0    NA .ZERO .ZERO        1 0.03773339 0.003416689 0.03152928 0.04553408
+1      1    NA .ZERO .ZERO        1 0.04544134 0.004119270 0.03795235 0.05481940
+
+
+-------------------  TF Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Cond + (1 | Subj) + (1 | TB) 
+   Data: tfdata (Number of observations: 2901) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.22      0.06     0.13     0.36       4312    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.25      0.03     0.19     0.33       3741    1
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept    -3.64      0.08    -3.79    -3.48       3302    1
+Cond1         0.13      0.03     0.07     0.19      20000    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma     0.77      0.01     0.75     0.79      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Condition:
+
+Hypothesis Tests for class b:
+                         Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Cond1+Intercept)... = 0     0.13      0.03     0.07     0.19          0 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+Main effect of Condition (Trace/NoTrace)
+
+     Cond PDist  Subj    TB MargCond   Estimate   Est.Error    lowerCI    upperCI
+2924    0    NA .ZERO .ZERO        1 0.03548879 0.002649185 0.03050946 0.04137323
+3051    1    NA .ZERO .ZERO        1 0.04048205 0.003009452 0.03473889 0.04720214
+
+
+-------------------  NT Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Group + (1 | Subj) + (1 | TB) 
+   Data: ntdata (Number of observations: 2843) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.18      0.05     0.11     0.29       4696    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.33      0.04     0.26     0.43       3342    1
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept    -3.51      0.08    -3.66    -3.36       2661    1
+Group1        0.09      0.03     0.03     0.15      20000    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma     0.81      0.01     0.79     0.83      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Group:
+
+Hypothesis Tests for class b:
+                         Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Group1+Intercept... = 0     0.09      0.03     0.03     0.15       0.43 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+Main effect of Group (NTF/TF)
+
+     Group PDist  Subj    TB MargCond   Estimate   Est.Error    lowerCI    upperCI
+3051     0    NA .ZERO .ZERO        1 0.04147766 0.003188817 0.03550983 0.04843255
+1        1    NA .ZERO .ZERO        1 0.04532166 0.003506864 0.03892130 0.05300043
+
+
+-------------------  T Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Group + (1 | Subj) + (1 | TB) 
+   Data: tdata (Number of observations: 2981) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.22      0.06     0.13     0.35       4902    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.26      0.04      0.2     0.35       3845    1
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept    -3.62      0.08    -3.78    -3.46       2889    1
+Group1        0.04      0.03    -0.02     0.09      20000    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma     0.78      0.01     0.76      0.8      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Group:
+
+Hypothesis Tests for class b:
+                         Estimate Est.Error l-95% CI u-95% CI Evid.Ratio 
+(Group1+Intercept... = 0     0.04      0.03    -0.02     0.09      13.63 
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+Main effect of Group (NTF/TF)
+
+     Group PDist  Subj    TB MargCond   Estimate   Est.Error    lowerCI    upperCI
+2924     0    NA .ZERO .ZERO        1 0.03618263 0.002730904 0.03092957 0.04230526
+124      1    NA .ZERO .ZERO        1 0.03765516 0.002855188 0.03222731 0.04396098
+
+
+-------------------
+
+
+To cite brms in publications use:
+
+  Paul-Christian Buerkner (in press). brms: An R Package for Bayesian Multilevel Models using
+  Stan. Journal of Statistical Software.
+
+A BibTeX entry for LaTeX users is
+
+  @Article{,
+    title = {{brms}: An {R} Package for Bayesian Multilevel Models using Stan},
+    author = {Paul-Christian Buerkner},
+    journal = {Journal of Statistical Software},
+    year = {in press},
+  }
+
+
+
+
+To cite Stan in publications use:
+
+  Stan Development Team (2015). Stan: A C++ Library for Probability and Sampling, Version 2.10.0.
+  URL http://mc-stan.org/.
+
+  Stan Development Team (2015). Stan Modeling Language User's Guide and Reference Manual, Version
+  2.10.0. URL http://mc-stan.org/.
+
+  Hoffman, Matthew D. and Andrew Gelman. In press. The No-U-Turn Sampler: Adaptively Setting Path
+  Lengths in Hamiltonian Monte Carlo. Journal of Machine Learning Research.
+
+  Bob Carpenter, et al. In press. Stan: A Probabilistic Programming Language. Journal of
+  Statistical Software
+

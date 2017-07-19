@@ -1,0 +1,151 @@
+-------------------  Full Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Block + (1 | Subj) + (1 | TB) 
+   Data: dat (Number of observations: 4507) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.25      0.07     0.16     0.41       5264    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)      0.4      0.05     0.32     0.51       3018    1
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept    -3.45      0.10    -3.65    -3.25       2265    1
+Block2        0.05      0.03    -0.01     0.10      20000    1
+Block3       -0.09      0.03    -0.14    -0.03      20000    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma     0.77      0.01     0.75     0.78      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Block2:
+
+Hypothesis Tests for class b:
+             Estimate Est.Error l-95% CI u-95% CI Evid.Ratio 
+(Block2) = 0     0.05      0.03    -0.01      0.1       7.72 
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+Effect of Block3:
+
+Hypothesis Tests for class b:
+             Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Block3) = 0    -0.09      0.03    -0.14    -0.03       0.35 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.Block2 v Block3:
+
+Hypothesis Tests for class b:
+                      Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Block2)-(Block3) = 0     0.14      0.03     0.08     0.19          0 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+--
+
+
+
+~~~
+
+
+
+-------------------  Trace-Only Model  -------------------
+
+ Family: lognormal (identity) 
+Formula: PDist ~ Block + (1 | Subj) + (1 | TB) 
+   Data: tdata (Number of observations: 3041) 
+Samples: 4 chains, each with iter = 6000; warmup = 1000; thin = 1; 
+         total post-warmup samples = 20000
+   WAIC: Not computed
+ 
+Group-Level Effects: 
+~Subj (Number of levels: 12) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.25      0.07     0.16     0.41       4742    1
+
+~TB (Number of levels: 40) 
+              Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sd(Intercept)     0.37      0.05     0.29     0.47       2858    1
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+Intercept    -3.44      0.10    -3.64    -3.25       3162    1
+Block3       -0.09      0.03    -0.14    -0.03      20000    1
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+sigma     0.77      0.01     0.75     0.79      20000    1
+
+Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+is a crude measure of effective sample size, and Rhat is the potential 
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+~~~
+
+Effect of Block:
+
+Hypothesis Tests for class b:
+                      Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Block2)-(Block3) = 0     0.14      0.03     0.08     0.19          0 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+---
+
+Hypothesis Tests for class b:
+                      Estimate Est.Error l-95% CI u-95% CI Evid.Ratio  
+(Block2)-(Block3) = 0     0.14      0.03     0.08     0.19          0 *
+---
+'*': The expected value under the hypothesis lies outside the 95% CI.
+
+-------------------
+
+
+To cite brms in publications use:
+
+  Paul-Christian Bürkner (in press). brms: An R Package for Bayesian Multilevel Models using Stan.
+  Journal of Statistical Software.
+
+A BibTeX entry for LaTeX users is
+
+  @Article{,
+    title = {{brms}: An {R} Package for Bayesian Multilevel Models using Stan},
+    author = {Paul-Christian Bürkner},
+    journal = {Journal of Statistical Software},
+    year = {in press},
+    encoding = {UTF-8},
+  }
+
+
+
+
+To cite RStan in publications use:
+
+  Stan Development Team (2016). RStan: the R interface to Stan. R package version 2.14.1.
+  http://mc-stan.org/.
+
+A BibTeX entry for LaTeX users is
+
+  @Misc{,
+    title = {{RStan}: the {R} interface to {Stan}},
+    author = {{Stan Development Team}},
+    note = {R package version 2.14.1},
+    year = {2016},
+    url = {http://mc-stan.org/},
+  }
+

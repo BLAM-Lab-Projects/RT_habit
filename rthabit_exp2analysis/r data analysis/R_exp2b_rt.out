@@ -1,0 +1,34 @@
+********************Latency, full model ********************
+
+>>>Block effect ANOVA: 
+
+Data: Data
+Models:
+lat.nBlock: Lat ~ 1 + (1 | TB) + (1 | Subject)
+lat.model: Lat ~ Block + (1 | TB) + (1 | Subject)
+           Df   AIC   BIC logLik deviance  Chisq Chi Df Pr(>Chisq)    
+lat.nBlock  4 48129 48155 -24061    48121                             
+lat.model   6 47600 47639 -23794    47588 532.46      2  < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+	 Simultaneous Tests for General Linear Hypotheses
+
+Multiple Comparisons of Means: User-defined Contrasts
+
+
+Fit: lmer(formula = Lat ~ Block + (1 | TB) + (1 | Subject), data = Data, 
+    REML = FALSE)
+
+Linear Hypotheses:
+           Estimate Std. Error z value Pr(>|z|)    
+NT-T1 == 0   40.226      1.720  23.392  < 2e-16 ***
+T2-T1 == 0   26.070      1.705  15.290  < 2e-16 ***
+T2-NT == 0  -14.156      1.723  -8.217 3.33e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+(Adjusted p values reported -- single-step method)
+
+
+
+
